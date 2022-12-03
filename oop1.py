@@ -25,3 +25,6 @@ class Cat:
 
     def get_age(self):
         return self.age
+class Dog(Cat):
+    def get_pet(self):
+        return f'{self.get_name()}   {self.get_age()}'
