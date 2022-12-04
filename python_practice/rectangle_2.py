@@ -1,22 +1,25 @@
-from oop1 import Rectangle, Square
+# Создайте метод, который возвращает атрибуты прямоугольника
+# как строку ( постарайтесь применить магический метод __str__).
+# Для объекта прямоугольника со значениями атрибута
+# x = 5, y = 10, width = 50, height = 100 метод должен вернуть строку
+# Rectangle : 5, 10, 50, 100.
 
-# далее создаем два прямоугольника
+class Rectangle:
+    def __init__(self, x,y, width,heigth):
+        self.x = x
+        self.y = y
+        self.width=width
+        self.heigth=heigth
 
-rect_1 = Rectangle(3, 4)
-rect_2 = Rectangle(12, 5)
-# вывод площади наших двух прямоугольников
-print(rect_1.get_area())
-print(rect_2.get_area())
+    # Создаем метод, который возвращает атрибуты прямоугольника как строку
+    def __str__(self):
+        return f'В квадрате: \nХ = {self.x} У = {self.y} \nШирина {self.width} Высота {self.heigth}'
 
-square_1 = Square(5)
-square_2 = Square(10)
+    # Метод расчета площади фигуры
+    def get_area(self):
+        return self.width*self.heigth
 
-print(square_1.get_area_square(),
-      square_2.get_area_square())
 
-figures = [rect_1, rect_2, square_1, square_2]
-for figure in figures:
-    if isinstance(figure, Square):
-        print(figure.get_area_square())
-    else:
-        print(figure.get_area())
+r1 = Rectangle(5,10,50,100)
+print(r1)
+print(f'Площадь фигуры = {r1.get_area()} кв. ед.')
