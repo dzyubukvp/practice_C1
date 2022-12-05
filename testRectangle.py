@@ -1,21 +1,15 @@
-from oop1 import Cat
-from oop1 import Dog
+class First:
+    parametr_first = 'Статический аттрибут Принадлежит классу FIRST'
 
-r1 = Cat('Вася', 'Мальчик', '3')
-r2 = Cat('Дуся', 'сучка', '2')
-dog1 = Dog('Bob','boy', 2)
-#print("r1.width =", r1.width)
-#print("r1.height =", r1.height)
-#print("r1.get_width =", r1.get_width())
-#print("r1.get_height =", r1.get_height())
-#print("r1.get_area =", r1.get_area())
+    def __init__(self, x, y, z):
+        self.x = x
+        self.y = y
+        self.z = z
 
-#print("r2.width =", r2.width)
-#print("r2.height =", r2.height)
-#print("r2.get_width =", r2.get_width())
-#print("r2.get_height =", r2.get_height())
-#print("r2.get_area =", r2.get_area())
+First.parametr_first = '+Переинициализировали+'
+print(f"Обращение к {First.parametr_first}")
 
-print(f'Кот {r1.get_age()} годичного возраста {r1.get_gender()} зовут {r1.get_name()}')
-print(f'Кот {r2.get_age()} годичного возраста {r2.get_gender()} зовут {r2.get_name()}')
-print(dog1.get_pet())
+xyz = First(10, 20, 30)
+xyz1 = First(3,2,1)
+print(f"Обращение к классу First \n{xyz.__class__}\nполучаем динамические \nатрибуты X={xyz.x}, Y={xyz.y}, Z={xyz.z}")
+print(f"Обращение к классу First \n{xyz1.__class__}\nполучаем динамические \nатрибуты X={xyz1.x}, Y={xyz1.y}, Z={xyz1.z}")
