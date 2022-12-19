@@ -143,7 +143,7 @@ class PyGameGui:
 
     def run(self):
         running = True
-        pygame.time.set_timer(pygame.USEREVENT + GameEvent.Event_Tick, 1000)
+        pygame.time.set_timer(pygame.USEREVENT + GameEvent.Event_Tick, 2000)
         while running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
